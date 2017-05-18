@@ -3,22 +3,49 @@
   <head>
     <title>AJAX</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="4.css">
+    <link rel="stylesheet" type="text/css" href="hw.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type='text/javascript' src='config.js'></script>
   </head>
   <body>
-    <h1>Ajax and HTTP</h1>
-    <ul>
-      <li><b>GET</b></li>
-      <li><b>POST</b></li>
-    </ul>
-    <img src=""  class="target-image" />
-    <div class="target">We're gonna render stuff here...</div>
-    <button type="button" class="load-stuff">Load Stuff</button>
-    <script src="4.js"></script>
+    <h1>Ticketmaster Music Events</h1>
+    <label>Select a city:</label>
+    <select name="cities">
+    <option value="ATL">Atlanta</option>
+    <option value="LA">Los Angeles</option>
+    <option value="RDU" selected>Raleigh/Durham</option>
+  </select>
+    <br>
+    <br>
+    <button type="button" class="load-stuff">Find Upcoming Events</button>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table" id="table">
+                <thead>
+                    <tr >
+                        <th class="text-center">
+                            Picture
+                        </th>
+                        <th class="text-center">
+                            Artist
+                        </th>
+                        <th class="text-center">
+                            Date
+                        </th>
+                        <th class="text-center">
+                            Venue
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+    <script src="hw.js"></script>
   </body>
 </html>
