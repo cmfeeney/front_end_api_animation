@@ -1,4 +1,5 @@
 $(function() {
+    var counter = 0;
   $('.load-stuff').on('click', function(event) {
     var _this = this;
     var mykey = config.key;
@@ -15,7 +16,15 @@ $(function() {
     }).then(function(data) {
       console.log(data);
 
-       $('.table tbody > tr').remove();
+      if (counter > 0) {
+      $('tr')
+          .children('td')
+          .animate({ padding: 0 })
+          .wrapInner('<div />')
+          .children()
+          .slideUp(function() { $(this).closest('tr').remove(); });
+        }
+      //$('.table tbody > tr').remove();
        var list = data["_embedded"]["events"]
       // var sorted = sortBy(list, { prop: ["dates"]["start"].localDate });
       function compare(a, b)
@@ -28,6 +37,7 @@ $(function() {
      list.sort(compare);
      list.forEach(function(item){
         console.log(item);
+        counter += 1;
         var pic = item["images"][0].url;
         var pic_tag = '<img src="' + pic + '" height = "200" width = "200"/>';
         //var pic_tag = $("<img />").prop('src', pic);
